@@ -1,0 +1,220 @@
+﻿tani: <400
+średni: [400, 1000)
+drogi: >1000
+
+
+tablet:
+telewizor(nie)
+koszt(tani | średni | drogi)
+pozytywne(mobilny)
+pozytywne(ekran_dotykowy)
+preferowana_marka()
+komfort_gry(niski)
+okablowanie(brak)
+lacznosc(WiFi|3g)
+negatywne(ma, zyroskop)
+negatywne(złożone_gry)
+
+
+tablet wyższej klasy:
+pozytywne(ma, zyroskop)
+komfort_gry(sredni)
+pozytywne(złożone_gry)
+
+
+xbox:
+telewizor(tak)
+koszt(tani)
+negatywne(mobilny)
+preferowana_marka(microsoft)
+komfort_gry(sredni)
+okablowanie(srednie)
+lacznosc(brak)
+negatywne(ma, kontroler_ruchu)
+
+
+xbox360:
+telewizor(tak)
+koszt(średni)
+negatywne(mobilny)
+negatywne(ma, kontroler_ruchu)
+preferowana_marka(microsoft)
+komfort_gry(wysoki)
+okablowanie(srednie)
+lacznosc(kabel|bezprzewodowa)
+
+
+kinect:
+wymaga xbox360
+koszt(drogi)
+negatywne(mobilny)
+pozytywne(ma, kontroler_ruchu)
+preferowana_marka(microsoft)
+komfort_gry(wysoki)
+okablowanie(srednie)
+
+
+PS3:
+telewizor(tak)
+koszt(drogi)
+negatywne(mobilny)
+negatywne(ma, kontroler_ruchu)
+preferowana_marka(sony)
+komfort_gry(wysoki)
+okablowanie(srednie)
+lacznosc(bezprzewodowa)
+pozytywne(ma, blueray)
+
+
+PS3 move:
+wymaga PS3
+negatywne(mobilny)
+pozytywne(ma, kontroler_ruchu)
+koszt(niski)
+preferowana_marka(sony)
+komfort_gry(sredni)
+okablowanie(srednie)
+
+
+PSP:
+telewizor(tak)
+koszt(średni)
+pozytywne(mobilny)
+gry_ruchowe(nie)
+preferowana_marka(sony)
+komfort_gry(sredni)
+okablowanie(brak)
+lacznosc(WiFi)
+
+
+PSPVita:
+telewizor(nie)
+koszt(droga)
+pozytywne(mobilny)
+pozytywne(duzy_ekran)
+pozytywne(ekran_dotykowy)
+gry_ruchowe(nie)
+preferowana_marka(sony)
+komfort_gry(wysoki)
+okablowanie(brak)
+lacznosc(WiFI|3g)
+
+
+
+
+
+
+Wii:
+telewizor(tak)
+koszt(średni)
+negatywne(mobilny)
+gry_ruchowe(tak)
+preferowana_marka(nintendo)
+komfort_gry(wysoki)
+okablowanie(srednie)
+negatywne(ma, gamepad)
+
+
+Wii U:
+koszt(średni)
+negatywne(mobilny)
+pozytywne(mobilny)
+gry_ruchowe(tak)
+preferowana_marka(nintendo)
+komfort_gry(wysoki)
+okablowanie(srednie)
+
+
+DSi:
+telewizor(nie)
+koszt(średni)
+pozytywne(mobilny)
+pozytywne(ekran_dotykowy)
+gry_ruchowe(nie)
+preferowana_marka(nintendo)
+komfort_gry(wysoki)
+okablowanie(brak)
+lacznosc(WiFi)
+
+
+DSi XL:
+telewizor(nie)
+koszt(średni)
+pozytywne(mobilny)
+pozytywne(ekran_dotykowy)
+pozytywne(duzy_ekran)
+gry_ruchowe(nie)
+preferowana_marka(nintendo)
+komfort_gry(wysoki)
+okablowanie(brak)
+lacznosc(WiFi)
+
+
+
+
+
+
+3DS:
+telewizor(nie)
+koszt(średni)
+pozytywne(mobilny)
+pozytywne(ekran_dotykowy)
+pozytywne(gry_3d)
+gry_ruchowe(nie)
+lacznosc(WiFi)
+preferowana_marka(nintendo)
+komfort_gry(wysoki)
+okablowanie(brak)
+
+
+komputer:
+wymaga monitora
+koszt(tani|sredni|drogi)
+gry_ruchowe(tak|nie)
+pozytywne(rozbudowa)
+pozytywne(ekran_dotykowy|brak_ekranu_dotykowego)
+okablowanie(wysokie)
+negatywne(mobilny)
+komfort_gry(wysoki)
+lacznosc(kabel|WiFi|3g)
+
+
+
+
+--PYTANIA
+
+
+telewizor(tak):
+        pozytywne(ma_telewizor)
+telewizor(tak):
+        pozytywne(moze_kupic_telewizor)
+
+
+pozytywne(mobilny):
+        chce grać w domu
+pozytywne(mobilny):
+        chce grać poza domem
+
+
+negatywne(mobilny):
+        chce grać tylko w domu
+
+
+kontroler ruchu wymagany:
+        chce grac w gry sportowe
+
+
+kontroler ruchu wymagany:
+        chce grac w gry taneczne
+
+
+zyroskop wymagany:
+        chce grac w gry typu labirynt
+
+
+blueray wymagany:
+        chce używać jako odtwarzacz multimedialny
+
+
+gamepad wymagany:
+        chce grać w gry FPP
