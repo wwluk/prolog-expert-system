@@ -1,12 +1,28 @@
 :- module(se2,[wykonaj]).
 
-:- dynamic([xpozytywne/2, xnegatywne/2]).
+:- dynamic([xpozytywne/2, xnegatywne/2, xzapisane/2]).
 
-zasoby_pieniezne()
+zapisz(zasoby_pieniezne) :-
+	!, write('jaki jest twoj budzet?'),
+	readln([Replay]),
+	zapisz_kwote(Replay).
+
+zapisz_kwote(X):-
+	X < 400, assertz(xzapisane(zasoby_pieniezne, male)).
+
+zapisz_kwote(X):-
+	X > 399, X < 1000, assertz(xzapisane(zasoby_pieniezne, srednie)).
+
+zapisz_kwote(X):-
+	X > 999, assertz(xzapisane(zasoby_pieniezne, duze)).
+
+zasoby_pieniezne(duze) :-
+	(xzapisane(zasoby_pieniezne, _); zapisz(zasoby_pieniezne)), xzapisane(zasoby_pieniezne, duze).
+	
 
 
 konsola_jest(tablet_tani) :-
-	pozytywne(nie_potrzebuje, telewizor)
+	pozytywne(nie_potrzebuje, telewizor).
 
 pozytywne(X, Y) :-
 	xpozytywne(X, Y), !.
@@ -53,10 +69,11 @@ wyczysc_fakty :-
 	write('\n\nNacisnij enter aby zakonczyc\n'),
 	retractall(xpozytywne(_, _)),
 	retractall(xnegatywne(_, _)),
+	retractall(xzapisane(_,_)),
 	readln(_).
 
 wykonaj :-
-	zwierze_jest(X), !,
+	konsola_jest(X), !,
 	write('Twoja konsola moze byc '), write(X), nl,
 	wyczysc_fakty.
 
