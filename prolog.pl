@@ -38,20 +38,65 @@ konsola_jest(tablet_tani) :-
 	pozytywne(ma, moblinosc),
 	pozytywne(ma, ekran_dotykowy),
 	pozytywne(nie_posiada, okablowania),
-	pozytywne(zasoby_pieniezne, duze),
+	pozytywne(zasoby_pieniezne, male),
 	negatywne(czy, WiFi),
 	negatywne(czy, zyroskop),
-	negatywne(czy, zlozone_gry).
+	negatywne(czy, zlozone_gry),
+	negatywne(czy, komfort_gry).
 
 konsola_jest(tablet_drogi) :-
 	pozytywne(nie_potrzebuje, telewizor),
 	pozytywne(ma, moblinosc),
 	pozytywne(ma, ekran_dotykowy),
 	pozytywne(nie_posiada, okablowania),
-	pozytywne(ma, 3G)
+	pozytywne(ma, 3G),
+	pozytywne(ma, WiFi),
 	pozytywne(ma, zyroskop),
 	pozytywne(ma, wysoka_jakosc),
-	negatywne(czy, zlozone_gry).
+	negatywne(zasoby_pieniezne, duze),
+	negatywne(czy, zlozone_gry),
+	negatywne(czy, komfort_gry).
+
+konsola_jest(xbox) :-
+	pozytywne(zasoby_pieniezne, male),
+	pozytywne(preferowana_marka, MS),
+	negatywne(czy, komfort_gry),
+	negatywne(czy, okablowanie),
+	negatywne(ma, lacznosc),
+	negatywne(ma, kontroler_ruchu),
+	negatywne(czy, mobilnosc),
+	negatywne(czy, telewizor).
+
+konsola_jest(xbox360) :-
+	pozytywne(zasoby_pieniezne, srednie),
+	pozytywne(preferowana_marka, MS),
+	pozytywne(ma, ethernet),
+	pozytywne(ma, WiFi),
+	pozytywne(komfort_gry, wysoki)
+	negatywne(czy, okablowanie),
+	negatywne(ma, kontroler_ruchu),
+	negatywne(czy, mobilnosc),
+	negatywne(czy, telewizor).
+
+konsola_jest(kinect) :-
+	pozytywne(ma, xbox360),
+	pozytywne(ma, kontroler_ruchu),
+	pozytywne(preferowana_marka, MS),
+	pozytywne(komfort_gry, wysoki),
+	negatywne(czy, okablowanie),
+	negatywne(zasoby_pieniezne, duze).
+
+konsola_jest(PS3) :-
+	pozytywne(zasoby_pieniezne, duze),
+	pozytywne(preferowana_marka, Sony),
+	pozytywne(ma, ethernet),
+	pozytywne(ma, WiFi),
+	pozytywne(ma, blueray),
+	pozytywne(komfort_gry, wysoki)
+	negatywne(czy, okablowanie),
+	negatywne(ma, kontroler_ruchu),
+	negatywne(czy, mobilnosc),
+	negatywne(czy, telewizor).
 
 pozytywne(X, Y) :-
 	xpozytywne(X, Y), !.
