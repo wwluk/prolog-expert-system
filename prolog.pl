@@ -7,22 +7,51 @@ zapisz(zasoby_pieniezne) :-
 	readln([Replay]),
 	zapisz_kwote(Replay).
 
-zapisz_kwote(X):-
+zapisz(preferowana_marka) :-
+	!, write('Jaka marke lubisz (Sony, MS, Nintendo)?'),
+	readln([Replay]),
+	zapisz_marke(Replay).
+
+zapisz_marke(X) :-
+	assertz(xzapisane(marka, X))
+
+zapisz_kwote(X) :-
 	X < 400, assertz(xzapisane(zasoby_pieniezne, male)).
 
-zapisz_kwote(X):-
+zapisz_kwote(X) :-
 	X > 399, X < 1000, assertz(xzapisane(zasoby_pieniezne, srednie)).
 
-zapisz_kwote(X):-
+zapisz_kwote(X) :-
 	X > 999, assertz(xzapisane(zasoby_pieniezne, duze)).
 
 zasoby_pieniezne(duze) :-
 	(xzapisane(zasoby_pieniezne, _); zapisz(zasoby_pieniezne)), xzapisane(zasoby_pieniezne, duze).
+
+zasoby_pieniezne(srednie) :-
+	(xzapisane(zasoby_pieniezne, _); zapisz(zasoby_pieniezne)), xzapisane(zasoby_pieniezne, srednie).
+
+zasoby_pieniezne(male) :-
+	(xzapisane(zasoby_pieniezne, _); zapisz(zasoby_pieniezne)), xzapisane(zasoby_pieniezne, male).
 	
-
-
 konsola_jest(tablet_tani) :-
-	pozytywne(nie_potrzebuje, telewizor).
+	pozytywne(nie_potrzebuje, telewizor),
+	pozytywne(ma, moblinosc),
+	pozytywne(ma, ekran_dotykowy),
+	pozytywne(nie_posiada, okablowania),
+	pozytywne(zasoby_pieniezne, duze),
+	negatywne(czy, WiFi),
+	negatywne(czy, zyroskop),
+	negatywne(czy, zlozone_gry).
+
+konsola_jest(tablet_drogi) :-
+	pozytywne(nie_potrzebuje, telewizor),
+	pozytywne(ma, moblinosc),
+	pozytywne(ma, ekran_dotykowy),
+	pozytywne(nie_posiada, okablowania),
+	pozytywne(ma, 3G)
+	pozytywne(ma, zyroskop),
+	pozytywne(ma, wysoka_jakosc),
+	negatywne(czy, zlozone_gry).
 
 pozytywne(X, Y) :-
 	xpozytywne(X, Y), !.
