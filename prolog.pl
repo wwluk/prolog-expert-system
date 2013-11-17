@@ -13,7 +13,7 @@ zapisz(preferowana_marka) :-
 	zapisz_marke(Replay).
 
 zapisz_marke(X) :-
-	assertz(xzapisane(marka, X))
+	assertz(xzapisane(marka, X)).
 
 zapisz_kwote(X) :-
 	X < 400, assertz(xzapisane(zasoby_pieniezne, male)).
