@@ -72,7 +72,7 @@ konsola_jest(xbox360) :-
 	pozytywne(preferowana_marka, MS),
 	pozytywne(ma, ethernet),
 	pozytywne(ma, WiFi),
-	pozytywne(komfort_gry, wysoki)
+	pozytywne(komfort_gry, wysoki),
 	negatywne(czy, okablowanie),
 	negatywne(ma, kontroler_ruchu),
 	negatywne(czy, mobilnosc),
@@ -92,7 +92,7 @@ konsola_jest(PS3) :-
 	pozytywne(ma, ethernet),
 	pozytywne(ma, WiFi),
 	pozytywne(ma, blueray),
-	pozytywne(komfort_gry, wysoki)
+	pozytywne(komfort_gry, wysoki),
 	negatywne(czy, okablowanie),
 	negatywne(ma, kontroler_ruchu),
 	negatywne(czy, mobilnosc),
