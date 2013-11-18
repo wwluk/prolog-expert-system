@@ -43,17 +43,18 @@ preferowana_marka(Nintendo) :-
         (xzapisane(preferowana_marka, _); zapisz(preferowana_marka)), xzapisane(preferowana_marka, Nintendo).
         
 konsola_jest(tablet_tani) :-
+        zasoby_pieniezne(male),
         pozytywne(nie_potrzebuje, telewizor),
         pozytywne(ma, moblinosc),
         pozytywne(ma, ekran_dotykowy),
         pozytywne(nie_posiada, okablowania),
-        pozytywne(zasoby_pieniezne, male),
         pozytywne(ma, WiFi),
         negatywne(czy, zyroskop),
         negatywne(czy, zlozone_gry),
         negatywne(czy, komfort_gry).
 
 konsola_jest(tablet_drogi) :-
+        zasoby_pieniezne(duze),
         pozytywne(nie_potrzebuje, telewizor),
         pozytywne(ma, moblinosc),
         pozytywne(ma, ekran_dotykowy),
@@ -62,12 +63,11 @@ konsola_jest(tablet_drogi) :-
         pozytywne(ma, WiFi),
         pozytywne(ma, zyroskop),
         pozytywne(ma, wysoka_jakosc),
-        negatywne(zasoby_pieniezne, duze),
         negatywne(czy, zlozone_gry),
         negatywne(czy, komfort_gry).
 
 konsola_jest(xbox) :-
-        pozytywne(zasoby_pieniezne, male),
+        zasoby_pieniezne(male),
         pozytywne(preferowana_marka, MS),
         negatywne(czy, komfort_gry),
         negatywne(czy, okablowanie),
@@ -77,7 +77,7 @@ konsola_jest(xbox) :-
         negatywne(czy, telewizor).
 
 konsola_jest(xbox360) :-
-        pozytywne(zasoby_pieniezne, srednie),
+        zasoby_pieniezne(srednie),
         pozytywne(preferowana_marka, MS),
         pozytywne(ma, ethernet),
         pozytywne(ma, WiFi),
@@ -88,15 +88,16 @@ konsola_jest(xbox360) :-
         negatywne(czy, telewizor).
 
 konsola_jest(kinect) :-
+        zasoby_pieniezne(male),
         pozytywne(ma, xbox360),
         pozytywne(ma, kontroler_ruchu),
         pozytywne(preferowana_marka, MS),
         pozytywne(komfort_gry, wysoki),
-        negatywne(czy, okablowanie),
-        negatywne(zasoby_pieniezne, duze).
+        negatywne(czy, okablowanie).
+        
 
 konsola_jest(PS3) :-
-        pozytywne(zasoby_pieniezne, duze),
+        zasoby_pieniezne(duze),
         pozytywne(preferowana_marka, Sony),
         pozytywne(ma, ethernet),
         pozytywne(ma, WiFi),
