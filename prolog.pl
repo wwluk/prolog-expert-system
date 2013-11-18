@@ -26,21 +26,21 @@ zasoby_pieniezne(male) :-
         (xzapisane(zasoby_pieniezne, _); zapisz(zasoby_pieniezne)), xzapisane(zasoby_pieniezne, male).
 
 zapisz(preferowana_marka) :-
-        !, write('Jaka marke lubisz (Sony, MS, Nintendo)?'),
+        !, write('Jaka marke lubisz (sony, microsoft, nintendo)?'),
         readln([Replay]),
         zapisz_marke(Replay).
 
 zapisz_marke(X) :-
         assertz(xzapisane(marka, X)).
 
-preferowana_marka(MS) :-
-        (xzapisane(preferowana_marka, _); zapisz(preferowana_marka)), xzapisane(preferowana_marka, MS).
+preferowana_marka(microsoft) :-
+        (xzapisane(preferowana_marka, _); zapisz(preferowana_marka)), xzapisane(preferowana_marka, microsoft).
 
-preferowana_marka(Sony) :-
-        (xzapisane(preferowana_marka, _); zapisz(preferowana_marka)), xzapisane(preferowana_marka, Sony).
+preferowana_marka(sony) :-
+        (xzapisane(preferowana_marka, _); zapisz(preferowana_marka)), xzapisane(preferowana_marka, sony).
 
-preferowana_marka(Nintendo) :-
-        (xzapisane(preferowana_marka, _); zapisz(preferowana_marka)), xzapisane(preferowana_marka, Nintendo).
+preferowana_marka(nintendo) :-
+        (xzapisane(preferowana_marka, _); zapisz(preferowana_marka)), xzapisane(preferowana_marka, nintendo).
         
 konsola_jest(tablet_tani) :-
         zasoby_pieniezne(male),
@@ -48,7 +48,7 @@ konsola_jest(tablet_tani) :-
         pozytywne(ma, moblinosc),
         pozytywne(ma, ekran_dotykowy),
         pozytywne(nie_posiada, okablowania),
-        pozytywne(ma, WiFi),
+        pozytywne(ma, wifi),
         negatywne(czy, zyroskop),
         negatywne(czy, zlozone_gry),
         negatywne(czy, komfort_gry).
@@ -60,7 +60,7 @@ konsola_jest(tablet_drogi) :-
         pozytywne(ma, ekran_dotykowy),
         pozytywne(nie_posiada, okablowania),
         pozytywne(ma, lacznosc_komorkowa),
-        pozytywne(ma, WiFi),
+        pozytywne(ma, wifi),
         pozytywne(ma, zyroskop),
         pozytywne(ma, wysoka_jakosc),
         negatywne(czy, zlozone_gry),
@@ -68,7 +68,7 @@ konsola_jest(tablet_drogi) :-
 
 konsola_jest(xbox) :-
         zasoby_pieniezne(male),
-        pozytywne(preferowana_marka, MS),
+        preferowana_marka(microsoft),
         negatywne(czy, komfort_gry),
         negatywne(czy, okablowanie),
         negatywne(ma, lacznosc),
@@ -78,9 +78,9 @@ konsola_jest(xbox) :-
 
 konsola_jest(xbox360) :-
         zasoby_pieniezne(srednie),
-        pozytywne(preferowana_marka, MS),
+        preferowana_marka(microsoft),
         pozytywne(ma, ethernet),
-        pozytywne(ma, WiFi),
+        pozytywne(ma, wifi),
         pozytywne(komfort_gry, wysoki),
         negatywne(czy, okablowanie),
         negatywne(ma, kontroler_ruchu),
@@ -91,16 +91,16 @@ konsola_jest(kinect) :-
         zasoby_pieniezne(male),
         pozytywne(ma, xbox360),
         pozytywne(ma, kontroler_ruchu),
-        pozytywne(preferowana_marka, MS),
+        preferowana_marka(microsoft),
         pozytywne(komfort_gry, wysoki),
         negatywne(czy, okablowanie).
         
 
-konsola_jest(PS3) :-
+konsola_jest(ps3) :-
         zasoby_pieniezne(duze),
-        pozytywne(preferowana_marka, Sony),
+        preferowana_marka(sony),
         pozytywne(ma, ethernet),
-        pozytywne(ma, WiFi),
+        pozytywne(ma, wifi),
         pozytywne(ma, blueray),
         pozytywne(komfort_gry, wysoki),
         negatywne(czy, okablowanie),
