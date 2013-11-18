@@ -22,25 +22,25 @@ zapisz_kwote(X) :-
         X > 999, assertz(xzapisane(zasoby_pieniezne, duze)).
 
 zasoby_pieniezne(duze) :-
-        (xzapisane(zasoby_pieniezne, _); zapisz(zasoby_pieniezne)), xzapisane(zasoby_pieniezne, duze).
+        xzapisane(zasoby_pieniezne, _) -> xzapisane(zasoby_pieniezne, duze); zapisz(zasoby_pieniezne), xzapisane(zasoby_pieniezne, duze).
 
 zasoby_pieniezne(srednie) :-
-        (xzapisane(zasoby_pieniezne, _); zapisz(zasoby_pieniezne)), xzapisane(zasoby_pieniezne, srednie).
+        xzapisane(zasoby_pieniezne, _) -> xzapisane(zasoby_pieniezne, srednie); zapisz(zasoby_pieniezne), xzapisane(zasoby_pieniezne, srednie).
 
 zasoby_pieniezne(male) :-
-        (xzapisane(zasoby_pieniezne, _); zapisz(zasoby_pieniezne)), xzapisane(zasoby_pieniezne, male).
+        xzapisane(zasoby_pieniezne, _) -> xzapisane(zasoby_pieniezne, male); zapisz(zasoby_pieniezne), xzapisane(zasoby_pieniezne, male).
 
 zapisz_marke(X) :-
-        assertz(xzapisane(marka, X)).
+        assertz(xzapisane(preferowana_marka, X)).
 
 preferowana_marka(microsoft) :-
-        (xzapisane(preferowana_marka, _); zapisz(preferowana_marka)), xzapisane(preferowana_marka, microsoft).
+        xzapisane(preferowana_marka, _) -> xzapisane(preferowana_marka, microsoft); zapisz(preferowana_marka), xzapisane(preferowana_marka, microsoft).
 
 preferowana_marka(sony) :-
-        (xzapisane(preferowana_marka, _); zapisz(preferowana_marka)), xzapisane(preferowana_marka, sony).
+        xzapisane(preferowana_marka, _) -> xzapisane(preferowana_marka, sony); zapisz(preferowana_marka), xzapisane(preferowana_marka, sony).
 
 preferowana_marka(nintendo) :-
-        (xzapisane(preferowana_marka, _); zapisz(preferowana_marka)), xzapisane(preferowana_marka, nintendo).
+        xzapisane(preferowana_marka, _) -> xzapisane(preferowana_marka, nintendo); zapisz(preferowana_marka), xzapisane(preferowana_marka, nintendo).
         
 konsola_jest(tablet_tani) :-
         zasoby_pieniezne(male),
@@ -123,14 +123,14 @@ negatywne(X, Y) :-
         pytaj(X, Y, nie).
 
 pytaj(X, Y, tak) :-
-        !, write(X), write(' to_konsola '), write(Y), write(' ? (t/n)\n'),
+        !, write(X), write(' ta_konsola '), write(Y), write(' ? (t/n)\n'),
         readln([Replay]),
         pamietaj(X, Y, Replay),
         odpowiedz(Replay, tak).
 
 
 pytaj(X, Y, nie) :-
-        !, write(X), write(' to_konsola '), write(Y), write(' ? (t/n)\n'),
+        !, write(X), write(' ta_konsola '), write(Y), write(' ? (t/n)\n'),
         readln([Replay]),
         pamietaj(X, Y, Replay),
         odpowiedz(Replay, nie).
@@ -162,5 +162,5 @@ wykonaj :-
         wyczysc_fakty.
 
 wykonaj :-
-        write('\nNie jestem w stanie odgadnac, '),
-        write('jakia konsole masz na mysli.\n\n'), wyczysc_fakty.
+        write('\nNie jestem w stanie doradzic, '),
+        write('jaka konsola bedzie dla ciebie odpowiednia.\n\n'), wyczysc_fakty.
