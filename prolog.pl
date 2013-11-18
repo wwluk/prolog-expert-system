@@ -51,7 +51,7 @@ telewizor(nie) :-
         
 konsola_jest(tablet_tani) :-
         zasoby_pieniezne(male),
-        pozytywne(nie_potrzebuje, telewizor),
+        telewizor(nie),
         pozytywne(ma, moblinosc),
         pozytywne(ma, ekran_dotykowy),
         pozytywne(nie_posiada, okablowania),
@@ -62,7 +62,7 @@ konsola_jest(tablet_tani) :-
 
 konsola_jest(tablet_drogi) :-
         zasoby_pieniezne(duze),
-        pozytywne(nie_potrzebuje, telewizor),
+        telewizor(nie),
         pozytywne(ma, moblinosc),
         pozytywne(ma, ekran_dotykowy),
         pozytywne(nie_posiada, okablowania),
@@ -81,7 +81,7 @@ konsola_jest(xbox) :-
         negatywne(ma, lacznosc),
         negatywne(ma, kontroler_ruchu),
         negatywne(czy, mobilnosc),
-        negatywne(czy, telewizor).
+        telewizor(tak).
 
 konsola_jest(xbox360) :-
         zasoby_pieniezne(srednie),
@@ -92,7 +92,7 @@ konsola_jest(xbox360) :-
         negatywne(czy, okablowanie),
         negatywne(ma, kontroler_ruchu),
         negatywne(czy, mobilnosc),
-        negatywne(czy, telewizor).
+        telewizor(tak).
 
 konsola_jest(kinect) :-
         zasoby_pieniezne(male),
@@ -113,7 +113,7 @@ konsola_jest(ps3) :-
         negatywne(czy, okablowanie),
         negatywne(ma, kontroler_ruchu),
         negatywne(czy, mobilnosc),
-        negatywne(czy, telewizor).
+        telewizor(tak).
 
 pozytywne(X, Y) :-
         xpozytywne(X, Y), !.
