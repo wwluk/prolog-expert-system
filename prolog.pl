@@ -41,6 +41,13 @@ preferowana_marka(sony) :-
 
 preferowana_marka(nintendo) :-
         xzapisane(preferowana_marka, _) -> xzapisane(preferowana_marka, nintendo); zapisz(preferowana_marka), xzapisane(preferowana_marka, nintendo).
+
+telewizor(tak) :-
+        upozytywne(masz, telewizor);
+        upozytywne(mozesz_kupic, telewizor).
+
+telewizor(nie) :- 
+        true.
         
 konsola_jest(tablet_tani) :-
         zasoby_pieniezne(male),
@@ -131,6 +138,33 @@ pytaj(X, Y, tak) :-
 
 pytaj(X, Y, nie) :-
         !, write(X), write(' ta_konsola '), write(Y), write(' ? (t/n)\n'),
+        readln([Replay]),
+        pamietaj(X, Y, Replay),
+        odpowiedz(Replay, nie).
+
+upozytywne(X, Y) :-
+        xpozytywne(X, Y), !.
+
+upozytywne(X, Y) :-
+        not(xnegatywne(X, Y)),
+        upytaj(X, Y, tak).
+
+unegatywne(X, Y) :-
+        xnegatywne(X, Y), !.
+
+unegatywne(X, Y) :-
+        not(xpozytywne(X, Y)),
+        upytaj(X, Y, nie).
+
+upytaj(X, Y, tak) :-
+        !, write('czy '), write(X), write(' '), write(Y), write(' ? (t/n)\n'),
+        readln([Replay]),
+        pamietaj(X, Y, Replay),
+        odpowiedz(Replay, tak).
+
+
+upytaj(X, Y, nie) :-
+        !, write('czy '), write(X), write(' '), write(Y), write(' ? (t/n)\n'),
         readln([Replay]),
         pamietaj(X, Y, Replay),
         odpowiedz(Replay, nie).
