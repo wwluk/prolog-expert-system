@@ -7,6 +7,11 @@ zapisz(zasoby_pieniezne) :-
         readln([Replay]),
         zapisz_kwote(Replay).
 
+zapisz(preferowana_marka) :-
+        !, write('Jaka marke lubisz (sony, microsoft, nintendo)?'),
+        readln([Replay]),
+        zapisz_marke(Replay).
+
 zapisz_kwote(X) :-
         X < 400, assertz(xzapisane(zasoby_pieniezne, male)).
 
@@ -24,11 +29,6 @@ zasoby_pieniezne(srednie) :-
 
 zasoby_pieniezne(male) :-
         (xzapisane(zasoby_pieniezne, _); zapisz(zasoby_pieniezne)), xzapisane(zasoby_pieniezne, male).
-
-zapisz(preferowana_marka) :-
-        !, write('Jaka marke lubisz (sony, microsoft, nintendo)?'),
-        readln([Replay]),
-        zapisz_marke(Replay).
 
 zapisz_marke(X) :-
         assertz(xzapisane(marka, X)).
