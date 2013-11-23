@@ -74,8 +74,8 @@ konsola_jest(tablet_drogi) :-
         negatywne(czy, komfort_gry).
 
 konsola_jest(xbox) :-
-        zasoby_pieniezne(male),
         preferowana_marka(microsoft),
+        zasoby_pieniezne(male),
         negatywne(czy, komfort_gry),
         negatywne(czy, okablowanie),
         negatywne(ma, lacznosc),
@@ -84,8 +84,8 @@ konsola_jest(xbox) :-
         telewizor(tak).
 
 konsola_jest(xbox360) :-
-        zasoby_pieniezne(srednie),
         preferowana_marka(microsoft),
+        zasoby_pieniezne(srednie),
         pozytywne(ma, ethernet),
         pozytywne(ma, wifi),
         pozytywne(komfort_gry, wysoki),
@@ -95,17 +95,17 @@ konsola_jest(xbox360) :-
         telewizor(tak).
 
 konsola_jest(kinect) :-
+        preferowana_marka(microsoft),
         zasoby_pieniezne(male),
         pozytywne(ma, xbox360),
         pozytywne(ma, kontroler_ruchu),
-        preferowana_marka(microsoft),
         pozytywne(komfort_gry, wysoki),
         negatywne(czy, okablowanie).
         
 
 konsola_jest(ps3) :-
-        zasoby_pieniezne(duze),
         preferowana_marka(sony),
+        zasoby_pieniezne(duze),
         pozytywne(ma, ethernet),
         pozytywne(ma, wifi),
         pozytywne(ma, blueray),
