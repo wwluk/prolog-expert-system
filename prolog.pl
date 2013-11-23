@@ -115,6 +115,127 @@ konsola_jest(ps3) :-
         negatywne(czy, mobilnosc),
         telewizor(tak).
 
+konsola_jest(ps3move) :-
+        preferowana_marka(sony),
+        zasoby_pieniezne(male),
+        pozytywne(ma, ps3),
+        pozytywne(ma, kontroler_ruchu),
+        negatywne(czy, komfort_gry),
+        negatywne(czy, okablowanie),
+        negatywne(czy, mobilnosc).
+
+konsola_jest(psp) :-
+        preferowana_marka(sony),
+        zasoby_pieniezne(srednie),
+        pozytywne(ma, moblinosc),
+        pozytywne(nie_posiada, okablowania),
+        pozytywne(ma, wifi),
+        negatywne(ma, kontroler_ruchu),
+        negatywne(czy, komfort_gry),
+        telewizor(nie).
+
+konsola_jest(pspvita) :-
+        preferowana_marka(sony),
+        zasoby_pieniezne(duze),
+        pozytywne(ma, moblinosc),
+        pozytywne(ma, duzy_ekran),
+        pozytywne(ma, ekran_dotykowy),
+        pozytywne(nie_posiada, okablowania),
+        pozytywne(komfort_gry, wysoki),
+        pozytywne(ma, wifi),
+        pozytywne(ma, lacznosc_komorkowa),
+        negatywne(ma, kontroler_ruchu),
+        telewizor(nie).
+
+konsola_jest(wii) :-
+        preferowana_marka(nintendo),
+        zasoby_pieniezne(srednie),
+        pozytywne(ma, kontroler_ruchu),
+        pozytywne(komfort_gry, wysoki),
+        negatywne(czy, okablowanie),
+        negatywne(ma, gamepad),
+        negatywne(czy, mobilnosc),
+        telewizor(tak).
+
+konsola_jest(wiiu) :-
+        preferowana_marka(nintendo),
+        zasoby_pieniezne(srednie),
+        pozytywne(ma, moblinosc),
+        pozytywne(ma, kontroler_ruchu),
+        pozytywne(komfort_gry, wysoki),
+        negatywne(czy, okablowanie),
+        negatywne(ma, gamepad).
+
+konsola_jest(dsi) :-
+        preferowana_marka(nintendo),
+        zasoby_pieniezne(srednie),
+        pozytywne(ma, moblinosc),
+        pozytywne(ma, ekran_dotykowy),
+        pozytywne(komfort_gry, wysoki),
+        pozytywne(nie_posiada, okablowania),
+        pozytywne(ma, wifi),
+        negatywne(ma, kontroler_ruchu),
+        telewizor(nie).
+
+konsola_jest(dsixl) :-
+        preferowana_marka(nintendo),
+        zasoby_pieniezne(srednie),
+        pozytywne(ma, moblinosc),
+        pozytywne(ma, duzy_ekran),
+        pozytywne(ma, ekran_dotykowy),
+        pozytywne(komfort_gry, wysoki),
+        pozytywne(nie_posiada, okablowania),
+        pozytywne(ma, wifi),
+        negatywne(ma, kontroler_ruchu),
+        telewizor(nie).
+
+konsola_jest(dsixl) :-
+        preferowana_marka(nintendo),
+        zasoby_pieniezne(srednie),
+        pozytywne(ma, moblinosc),
+        pozytywne(ma, ekran_dotykowy),
+        pozytywne(czy, gry_3d),
+        pozytywne(komfort_gry, wysoki),
+        pozytywne(nie_posiada, okablowania),
+        pozytywne(ma, wifi),
+        negatywne(ma, kontroler_ruchu),
+        telewizor(nie).
+
+konsola_jest(komputer_tani) :-
+        zasoby_pieniezne(male),
+        pozytywne(pozwala, ulepszyc),
+        pozytywne(ma, ethernet),
+        pozytywne(ma, wifi),
+        pozytywne(komfort_gry, wysoki),
+        negatywne(czy, okablowanie),
+        negatywne(ma, kontroler_ruchu),
+        negatywne(czy, mobilnosc),
+        telewizor(tak).
+
+konsola_jest(komputer_sredni) :-
+        zasoby_pieniezne(srednie),
+        pozytywne(pozwala, ulepszyc),
+        pozytywne(ma, ethernet),
+        pozytywne(ma, wifi),
+        pozytywne(komfort_gry, wysoki),
+        pozytywne(ma, kontroler_ruchu),
+        negatywne(czy, okablowanie),
+        negatywne(ma, kontroler_ruchu),
+        telewizor(tak).
+
+konsola_jest(komputer_sredni) :-
+        zasoby_pieniezne(srednie),
+        pozytywne(pozwala, ulepszyc),
+        pozytywne(ma, ethernet),
+        pozytywne(ma, wifi),
+        pozytywne(ma, lacznosc_komorkowa),
+        pozytywne(ma, ekran_dotykowy),
+        pozytywne(komfort_gry, wysoki),
+        pozytywne(ma, kontroler_ruchu),
+        negatywne(czy, okablowanie),
+        negatywne(ma, kontroler_ruchu),
+        telewizor(tak).
+
 pozytywne(X, Y) :-
         xpozytywne(X, Y), !.
 
