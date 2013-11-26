@@ -26,9 +26,15 @@ zasoby_pieniezne(duze) :-
 
 zasoby_pieniezne(srednie) :-
         xzapisane(zasoby_pieniezne, _) -> xzapisane(zasoby_pieniezne, srednie); zapisz(zasoby_pieniezne), xzapisane(zasoby_pieniezne, srednie).
+zasoby_pieniezne(srednie) :-
+        zasoby_pieniezne(duze).
 
 zasoby_pieniezne(male) :-
         xzapisane(zasoby_pieniezne, _) -> xzapisane(zasoby_pieniezne, male); zapisz(zasoby_pieniezne), xzapisane(zasoby_pieniezne, male).
+zasoby_pieniezne(male) :-
+        zasoby_pieniezne(srednie).
+zasoby_pieniezne(male) :-
+        zasoby_pieniezne(duze).
 
 zapisz_marke(X) :-
         assertz(xzapisane(preferowana_marka, X)).
@@ -203,7 +209,7 @@ konsola_jest(dsixl) :-
 
 konsola_jest(komputer_tani) :-
         zasoby_pieniezne(male),
-        pozytywne(pozwala, ulepszyc),
+        pozytywne(pozwala, ulepszyc_pozniej),
         pozytywne(ma, ethernet),
         pozytywne(ma, wifi),
         pozytywne(komfort_gry, komfort_gry_wysoki),
@@ -214,7 +220,7 @@ konsola_jest(komputer_tani) :-
 
 konsola_jest(komputer_sredni) :-
         zasoby_pieniezne(srednie),
-        pozytywne(pozwala, ulepszyc),
+        pozytywne(pozwala, ulepszyc_pozniej),
         pozytywne(ma, ethernet),
         pozytywne(ma, wifi),
         pozytywne(komfort_gry, komfort_gry_wysoki),
