@@ -60,9 +60,9 @@ konsola_jest(tablet_tani) :-
         telewizor(nie),
         pozytywne(ma, moblinosc),
         pozytywne(ma, ekran_dotykowy),
-        negatywne(czy, okablowanie),
+%        negatywne(czy, okablowanie),
         pozytywne(ma, wifi),
-        negatywne(czy, zyroskop),
+        negatywne(ma, zyroskop),
         negatywne(czy, zlozone_gry),
         negatywne(komfort_gry, komfort_gry_wysoki).
 
@@ -71,7 +71,7 @@ konsola_jest(tablet_drogi) :-
         telewizor(nie),
         pozytywne(ma, moblinosc),
         pozytywne(ma, ekran_dotykowy),
-        negatywne(czy, okablowanie),
+%        negatywne(czy, okablowanie),
         pozytywne(ma, lacznosc_komorkowa),
         pozytywne(ma, wifi),
         pozytywne(ma, zyroskop),
@@ -83,7 +83,7 @@ konsola_jest(xbox) :-
         preferowana_marka(microsoft),
         zasoby_pieniezne(male),
         negatywne(komfort_gry, komfort_gry_wysoki),
-        negatywne(czy, okablowanie),
+%        negatywne(czy, okablowanie),
         negatywne(ma, lacznosc),
         negatywne(ma, kontroler_ruchu),
         negatywne(czy, mobilnosc),
@@ -95,7 +95,7 @@ konsola_jest(xbox360) :-
         pozytywne(ma, ethernet),
         pozytywne(ma, wifi),
         pozytywne(komfort_gry, komfort_gry_wysoki),
-        negatywne(czy, okablowanie),
+%        negatywne(czy, okablowanie),
         negatywne(ma, kontroler_ruchu),
         negatywne(czy, mobilnosc),
         telewizor(tak).
@@ -105,8 +105,9 @@ konsola_jest(kinect) :-
         zasoby_pieniezne(male),
         pozytywne(ma, xbox360),
         pozytywne(ma, kontroler_ruchu),
-        pozytywne(komfort_gry, komfort_gry_wysoki),
-        negatywne(czy, okablowanie).
+%        negatywne(czy, okablowanie),
+        pozytywne(komfort_gry, komfort_gry_wysoki).
+
         
 
 konsola_jest(ps3) :-
@@ -116,7 +117,7 @@ konsola_jest(ps3) :-
         pozytywne(ma, wifi),
         pozytywne(ma, blueray),
         pozytywne(komfort_gry, komfort_gry_wysoki),
-        negatywne(czy, okablowanie),
+%        negatywne(czy, okablowanie),
         negatywne(ma, kontroler_ruchu),
         negatywne(czy, mobilnosc),
         telewizor(tak).
@@ -127,14 +128,14 @@ konsola_jest(ps3move) :-
         pozytywne(ma, ps3),
         pozytywne(ma, kontroler_ruchu),
         negatywne(komfort_gry, komfort_gry_wysoki),
-        negatywne(czy, okablowanie),
+%        negatywne(czy, okablowanie),
         negatywne(czy, mobilnosc).
 
 konsola_jest(psp) :-
         preferowana_marka(sony),
         zasoby_pieniezne(srednie),
         pozytywne(ma, moblinosc),
-        pozytywne(nie_posiada, okablowania),
+%        negatywne(czy, okablowanie),
         pozytywne(ma, wifi),
         negatywne(ma, kontroler_ruchu),
         negatywne(komfort_gry, komfort_gry_wysoki),
@@ -146,7 +147,7 @@ konsola_jest(pspvita) :-
         pozytywne(ma, moblinosc),
         pozytywne(ma, duzy_ekran),
         pozytywne(ma, ekran_dotykowy),
-        pozytywne(nie_posiada, okablowania),
+%        negatywne(czy, okablowanie),
         pozytywne(komfort_gry, komfort_gry_wysoki),
         pozytywne(ma, wifi),
         pozytywne(ma, lacznosc_komorkowa),
@@ -158,7 +159,7 @@ konsola_jest(wii) :-
         zasoby_pieniezne(srednie),
         pozytywne(ma, kontroler_ruchu),
         pozytywne(komfort_gry, komfort_gry_wysoki),
-        negatywne(czy, okablowanie),
+%        negatywne(czy, okablowanie),
         negatywne(ma, gamepad),
         negatywne(czy, mobilnosc),
         telewizor(tak).
@@ -169,7 +170,7 @@ konsola_jest(wiiu) :-
         pozytywne(ma, moblinosc),
         pozytywne(ma, kontroler_ruchu),
         pozytywne(komfort_gry, komfort_gry_wysoki),
-        negatywne(czy, okablowanie),
+%        negatywne(czy, okablowanie),
         negatywne(ma, gamepad).
 
 konsola_jest(dsi) :-
@@ -178,7 +179,7 @@ konsola_jest(dsi) :-
         pozytywne(ma, moblinosc),
         pozytywne(ma, ekran_dotykowy),
         pozytywne(komfort_gry, komfort_gry_wysoki),
-        pozytywne(nie_posiada, okablowania),
+%        negatywne(czy, okablowanie),
         pozytywne(ma, wifi),
         negatywne(ma, kontroler_ruchu),
         telewizor(nie).
@@ -190,7 +191,7 @@ konsola_jest(dsixl) :-
         pozytywne(ma, duzy_ekran),
         pozytywne(ma, ekran_dotykowy),
         pozytywne(komfort_gry, komfort_gry_wysoki),
-        pozytywne(nie_posiada, okablowania),
+%        negatywne(czy, okablowanie),
         pozytywne(ma, wifi),
         negatywne(ma, kontroler_ruchu),
         telewizor(nie).
@@ -202,7 +203,7 @@ konsola_jest(dsixl) :-
         pozytywne(ma, ekran_dotykowy),
         pozytywne(czy, gry_3d),
         pozytywne(komfort_gry, komfort_gry_wysoki),
-        pozytywne(nie_posiada, okablowania),
+%        negatywne(czy, okablowanie),
         pozytywne(ma, wifi),
         negatywne(ma, kontroler_ruchu),
         telewizor(nie).
@@ -213,7 +214,7 @@ konsola_jest(komputer_tani) :-
         pozytywne(ma, ethernet),
         pozytywne(ma, wifi),
         pozytywne(komfort_gry, komfort_gry_wysoki),
-        negatywne(czy, okablowanie),
+%        negatywne(czy, okablowanie),
         negatywne(ma, kontroler_ruchu),
         negatywne(czy, mobilnosc),
         telewizor(tak).
@@ -224,7 +225,7 @@ konsola_jest(komputer_sredni) :-
         pozytywne(ma, ethernet),
         pozytywne(ma, wifi),
         pozytywne(komfort_gry, komfort_gry_wysoki),
-        negatywne(czy, okablowanie),
+%        negatywne(czy, okablowanie),
         negatywne(ma, kontroler_ruchu),
         telewizor(tak).
 
@@ -236,7 +237,7 @@ konsola_jest(komputer_sredni) :-
         pozytywne(ma, lacznosc_komorkowa),
         pozytywne(ma, ekran_dotykowy),
         pozytywne(komfort_gry, komfort_gry_wysoki),
-        negatywne(czy, okablowanie),
+%        negatywne(czy, okablowanie),
         negatywne(ma, kontroler_ruchu),
         telewizor(tak).
 
