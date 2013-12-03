@@ -163,7 +163,7 @@ konsola_jest(dsixl) :-
         negatywne(ma, kontroler_ruchu),
         telewizor(nie).
 
-konsola_jest(dsixl) :-
+konsola_jest(ds3ds) :-
         preferowana_marka(nintendo),
         zasoby_pieniezne(srednie),
         pozytywne(czy, mobilnosc),
